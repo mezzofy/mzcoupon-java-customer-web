@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<!-- Configuration file for UrlRewriteFilter http://www.tuckey.org/urlrewrite/ -->
+<urlrewrite>
+<!-- 	<rule enabled="true">
+		<note>
+			The rule means that requests to xxx.mezzofy.com/api/v1/ will be
+			redirected
+			to xxx.mezzofy.com/api/v1/xxx/
+			the url will be rewritten.
+		</note>
+		<condition name="host" operator="notequal">platform.([a-zA-Z0-9.]+)</condition>
+		<condition name="host" operator="equal">([a-zA-Z0-9]+).([a-zA-Z0-9.]+)</condition>
+		<from>^/api/v1/(.*)</from>
+		<to>/api/v1/%1/$1</to>
+	</rule>-->
+<!-- 	<rule enabled="true">
+		<note>
+			The rule means that requests to xxx.mezzofy.com/ will be
+			redirected
+			to xxx.mezzofy.com/Login_go.do?business=xxx
+			the url will be rewritten.
+		</note>
+		<condition name="host" operator="equal">([a-zA-Z0-9]+).([a-zA-Z0-9.]+)</condition>
+		<from>^/$</from>
+		<to>/campaign_list.do.do</to>
+	</rule>  -->
+	
+   <rule enabled="true">
+        <note>
+            The rule means that requests to /test/status/ will be redirected to /rewrite-status
+            the url will be rewritten.
+        </note>
+       <condition name="host" operator="equal">([a-zA-Z0-9]+).([a-zA-Z0-9.]+)</condition>
+		<from>^/$</from>
+		<to>%{context-path}/campaign_list.do</to>
+    </rule>
+       <rule enabled="true">
+        <note>
+            The rule means that requests to /test/status/ will be redirected to /rewrite-status
+            the url will be rewritten.
+        </note>
+        
+        <from>^/([A-Za-z0-9_-]+)$</from>
+        <to>%{context-path}/campaign_view.do?campaignCode=$1</to>
+    </rule>
+    
+      <rule enabled="true">
+        <note>
+            The rule means that requests to /test/status/ will be redirected to /rewrite-status
+            the url will be rewritten.
+        </note>
+        
+        <from>^/([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+)$</from>
+        <to>%{context-path}/campaign_download.do?campaignCode=$1&amp;paypal=$2</to>
+    </rule>
+        
+      <rule enabled="true">
+        <note>
+            The rule means that requests to /test/status/ will be redirected to /rewrite-status
+            the url will be rewritten.
+        </note>
+        
+        <from>^/([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+)$</from>
+        <to>%{context-path}/campaign_passbook.do?campaignCode=$1</to>
+    </rule>
+	<!--  <rule enabled="true">
+        <note>
+            The rule means that requests to /test/status/ will be redirected to /rewrite-status
+            the url will be rewritten.
+        </note>
+        
+        <from>^/([A-Za-z0-9_-]+)$</from>
+        <to>%{context-path}/Login_go.do?business=%1</to>
+    </rule>
+    <condition name="host" operator="equal">([a-zA-Z0-9]+).([a-zA-Z0-9.]+)</condition>
+		<from>^/$</from>
+		<to>/Login_go.do?business=%1</to>
+ -->
+
+</urlrewrite>

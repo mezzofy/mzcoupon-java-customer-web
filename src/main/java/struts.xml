@@ -1,0 +1,53 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="do" />
+	<constant name="struts.multipart.maxSize" value="1200000000" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<package name="default" extends="struts-default, json-default">
+
+		<interceptors>
+			<interceptor-stack name="appDefault">
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">ERROR</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="appDefault" />
+
+		<global-results>
+			<result name="sessionerror">/index.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="com.mezzofy.coupon.exception.SessionExpiredException" result="sessionerror" />
+		</global-exception-mappings>
+
+		
+		<action name="Ajax_*" method="{1}" class="com.mezzofy.coupon.action.MerchantCouponAction">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="campaign_*" method="{1}" class="com.mezzofy.coupon.action.MerchantCouponAction">
+			<result type="stream">
+				<param name="contentType">application/vnd.apple.pkpass</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="merchantcouponlist">/merchant/coupon_listing.jsp</result>
+			<result name="merchantcoupondtl">/merchant/coupon_details.jsp</result>
+			<result name="merchantsinglecoupon">/merchant/coupon_single.jsp</result>
+			<result name="passbook">/merchant/passbook.jsp</result>
+			<result name="failure">/merchant/sorry.jsp</result>
+			<result name="couponemail">/merchant/coupon_sent.jsp</result>
+			<result name="paypal" type="redirect">${payurl}</result>	
+		</action>
+	</package>
+</struts>
+
