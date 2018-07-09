@@ -2,10 +2,10 @@ package com.mezzofy.coupon.action;
 
 public class MerchantConfigure {
 	
-	 private static final String MERCHANT_CODE="dmha";
-	 private static final String AUTH_KEY="NPNN10";
-	 private static final String MERCHANT_URL="dmha";
-	 private static final String SERVER_URL=".uat.mezzofy.com";
+ private static final String MERCHANT_CODE="dmha";
+ private static final String AUTH_KEY="NPNN10";
+ private static final String MERCHANT_URL="dmha";
+ private static final String SERVER_URL=".uat.mezzofy.com";
 
 
  public static String getMerchantCode() {
