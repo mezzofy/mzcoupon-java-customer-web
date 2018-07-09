@@ -1,4 +1,4 @@
-# mzcoupon-java-customer-web
+# MZCoupon Java Web
 
 # 
 
@@ -6,14 +6,9 @@
 
 
 #### Installation Guide for MZCoupon
-###### You want to add pod 'MZCoupon', '~> 1.0' similar to the following to your project:
 
 
 
-
-###### Alternatively to give it a test run, run the command:
-
-pod try MZCoupon
 ## Initialize MZCoupon
 ``` objc
 package com.mezzofy.coupon.action;
