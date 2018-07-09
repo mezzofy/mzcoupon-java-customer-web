@@ -8,12 +8,8 @@
 #### Installation Guide for MZCoupon
 ###### You want to add pod 'MZCoupon', '~> 1.0' similar to the following to your project:
 
-``` objc
-target 'MyApp' do
-pod 'MZCoupon', '~> 1.0'
-end
-```
-Then run a pod install inside your terminal, or from CocoaPods.app.
+
+
 
 ###### Alternatively to give it a test run, run the command:
 
