@@ -1,4 +1,4 @@
-# MZCoupon Java Web
+# Mezzofy Coupon Java Based Customer Web Application
 
 # 
 
