@@ -50,4 +50,5 @@ public static String getMerchantUrl() {
 Login to Merchant Account 
 ![](https://s3-ap-southeast-1.amazonaws.com/mzcouponuat/email/merchant_profile.jpg)
 
+##### Click here for [Full Implementation Guide](https://github.com/mezzofy/mzcoupon-java-customer-web)
 ### End
