@@ -23,7 +23,7 @@ pod try MZCoupon
 package com.mezzofy.coupon.action;
 
 public class MerchantConfigure {
- private static final String MERCHANT_CODE="6ZYT";
+ private static final String MERCHANT_CODE="A123";
  private static final String AUTH_KEY="ZJWUWQ";
  private static final String MERCHANT_URL="demo";
 
